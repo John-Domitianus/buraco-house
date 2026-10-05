@@ -56,7 +56,7 @@ function Home() {
         <SectionTitle title="Como funciona" subtitle="Simples, seguro e direto pelo Discord." />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((st, i) => {
-            const Icon = stepIcons[i % stepIcons.length];
+            const Icon = stepIcons[i % stepIcons.length] ?? Gavel;
             return (
               <div key={i} className="card-surface card-hover p-6 animate-fade-up" style={{ animationDelay: `${i * 80}ms` }}>
                 <div className="mb-5 flex items-center justify-between">

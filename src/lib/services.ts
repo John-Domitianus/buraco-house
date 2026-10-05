@@ -2,7 +2,7 @@ import { queryOptions } from "@tanstack/react-query";
 import { supabase } from "@/integrations/supabase/client";
 import type { Auction, AuctionDisplayStatus, HowItWorksStep, RankingPeriod } from "./types";
 
-async function unwrap<T>(p: PromiseLike<{ data: T | null; error: { message: string } | null }>) {
+async function unwrap<T>(p: PromiseLike<{ data: T; error: { message: string } | null }>): Promise<T> {
   const { data, error } = await p;
   if (error) throw new Error(error.message);
   return data as T;

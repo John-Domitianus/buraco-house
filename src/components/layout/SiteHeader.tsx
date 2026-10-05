@@ -47,9 +47,6 @@ export function SiteHeader() {
           <DiscordButton url={settings?.discord_server_url} size="sm">Discord</DiscordButton>
           {session ? (
             <>
-              {isAdmin && (
-                <Button asChild variant="outline" size="sm"><Link to="/admin"><Shield /> Admin</Link></Button>
-              )}
               <span className="flex items-center gap-1 rounded-lg border border-border px-2.5 py-1.5 text-xs text-muted-foreground">
                 <Coins className="h-3.5 w-3.5 text-gold" /> {profile?.credits ?? 0}
               </span>
@@ -78,9 +75,7 @@ export function SiteHeader() {
           <div className="mt-3 grid gap-2 border-t border-border pt-4">
             <DiscordButton url={settings?.discord_server_url} className="w-full">Discord</DiscordButton>
             {session ? (
-              <>
-                {isAdmin && (
-                  <Button asChild variant="outline" className="w-full"><Link to="/admin" onClick={() => setOpen(false)}><Shield /> Painel admin</Link></Button>
+              <>><Shield /> Painel admin</Link></Button>
                 )}
                 <Button variant="ghost" className="w-full" onClick={handleSignOut}><LogOut /> Sair ({profile?.nickname})</Button>
               </>
