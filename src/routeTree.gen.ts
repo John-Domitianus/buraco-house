@@ -10,33 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ColaboradoresRouteImport } from './routes/colaboradores'
+import { Route as RankingRouteImport } from './routes/ranking'
+import { Route as LeiloesIndexRouteImport } from './routes/leiloes.index'
+import { Route as LeiloesIdRouteImport } from './routes/leiloes.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ColaboradoresRoute = ColaboradoresRouteImport.update({
+  id: '/colaboradores',
+  path: '/colaboradores',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RankingRoute = RankingRouteImport.update({
+  id: '/ranking',
+  path: '/ranking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeiloesIndexRoute = LeiloesIndexRouteImport.update({
+  id: '/leiloes/',
+  path: '/leiloes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeiloesIdRoute = LeiloesIdRouteImport.update({
+  id: '/leiloes/$id',
+  path: '/leiloes/$id',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/colaboradores': typeof ColaboradoresRoute
+  '/ranking': typeof RankingRoute
+  '/leiloes/$id': typeof LeiloesIdRoute
+  '/leiloes/': typeof LeiloesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/colaboradores': typeof ColaboradoresRoute
+  '/ranking': typeof RankingRoute
+  '/leiloes/$id': typeof LeiloesIdRoute
+  '/leiloes': typeof LeiloesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/colaboradores': typeof ColaboradoresRoute
+  '/ranking': typeof RankingRoute
+  '/leiloes/$id': typeof LeiloesIdRoute
+  '/leiloes/': typeof LeiloesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/colaboradores' | '/ranking' | '/leiloes/$id' | '/leiloes/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/colaboradores' | '/ranking' | '/leiloes/$id' | '/leiloes'
+  id:
+    | '__root__'
+    | '/'
+    | '/colaboradores'
+    | '/ranking'
+    | '/leiloes/$id'
+    | '/leiloes/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ColaboradoresRoute: typeof ColaboradoresRoute
+  RankingRoute: typeof RankingRoute
+  LeiloesIdRoute: typeof LeiloesIdRoute
+  LeiloesIndexRoute: typeof LeiloesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +94,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/colaboradores': {
+      id: '/colaboradores'
+      path: '/colaboradores'
+      fullPath: '/colaboradores'
+      preLoaderRoute: typeof ColaboradoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ranking': {
+      id: '/ranking'
+      path: '/ranking'
+      fullPath: '/ranking'
+      preLoaderRoute: typeof RankingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leiloes/': {
+      id: '/leiloes/'
+      path: '/leiloes'
+      fullPath: '/leiloes/'
+      preLoaderRoute: typeof LeiloesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leiloes/$id': {
+      id: '/leiloes/$id'
+      path: '/leiloes/$id'
+      fullPath: '/leiloes/$id'
+      preLoaderRoute: typeof LeiloesIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ColaboradoresRoute: ColaboradoresRoute,
+  RankingRoute: RankingRoute,
+  LeiloesIdRoute: LeiloesIdRoute,
+  LeiloesIndexRoute: LeiloesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
