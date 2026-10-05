@@ -12,7 +12,7 @@ const medal = [
 ];
 
 export function PodiumCard({ entry, index }: { entry: RankingEntry; index: number }) {
-  const m = medal[index];
+  const m = medal[index] ?? medal[2]!;
   return (
     <div className={cn("card-surface card-hover relative flex flex-col items-center gap-3 p-6 text-center", index === 0 && "sm:-translate-y-3 border-gold/40")}>
       {index === 0 && <Crown className="absolute -top-4 h-8 w-8 text-gold" />}
@@ -38,8 +38,8 @@ export function TopBuyers() {
   return (
     <div className="grid gap-5 pt-4 sm:grid-cols-3">
       {order.map((i) => (
-        <div key={top[i].id} className={cn(i === 0 ? "order-first sm:order-none" : "")}>
-          <PodiumCard entry={top[i]} index={i} />
+        <div key={top[i]!.id} className={cn(i === 0 ? "order-first sm:order-none" : "")}>
+          <PodiumCard entry={top[i]!} index={i} />
         </div>
       ))}
     </div>

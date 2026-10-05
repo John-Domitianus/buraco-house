@@ -54,7 +54,7 @@ function Page() {
     let prize: RoulettePrize | undefined;
     if (session) {
       const { data, error } = await supabase.rpc("spin_roulette");
-      if (error) return toast.error(error.message);
+      if (error) { toast.error(error.message); return; }
       prize = list.find((p) => p.id === (data as { prize_id: string }).prize_id) ?? list[0];
     } else {
       prize = demoPick(list);
@@ -158,7 +158,7 @@ function Page() {
             <Gift className="h-10 w-10" />
           </div>
           <p className="font-display text-xl font-bold">{won?.name}</p>
-          <div className="flex justify-center"><RarityBadge rarity={won?.rarity} /></div>
+          <div className="flex justify-center"><RarityBadge rarity={won?.rarity ?? null} /></div>
           <Button variant="hero" onClick={() => setWon(null)}>Fechar</Button>
         </DialogContent>
       </Dialog>

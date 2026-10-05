@@ -59,7 +59,7 @@ function Page() {
           <>
             <div className="grid gap-5 pt-4 sm:grid-cols-3">
               {(top.length === 3 ? [1, 0, 2] : top.map((_, i) => i)).map((i) => (
-                <div key={top[i].id} className={i === 0 ? "order-first sm:order-none" : ""}><PodiumCard entry={top[i]} index={i} /></div>
+                <div key={top[i]!.id} className={i === 0 ? "order-first sm:order-none" : ""}><PodiumCard entry={top[i]!} index={i} /></div>
               ))}
             </div>
             {rest.length > 0 && (
