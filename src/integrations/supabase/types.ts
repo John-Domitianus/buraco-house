@@ -14,16 +14,380 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      auction_items: {
+        Row: {
+          auction_id: string
+          created_at: string
+          display_order: number
+          id: string
+          image_url: string | null
+          info: string | null
+          name: string
+          rarity: string
+          starting_price: number | null
+        }
+        Insert: {
+          auction_id: string
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          info?: string | null
+          name: string
+          rarity?: string
+          starting_price?: number | null
+        }
+        Update: {
+          auction_id?: string
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          info?: string | null
+          name?: string
+          rarity?: string
+          starting_price?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "auction_items_auction_id_fkey"
+            columns: ["auction_id"]
+            isOneToOne: false
+            referencedRelation: "auctions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      auctions: {
+        Row: {
+          created_at: string
+          description: string | null
+          discord_url: string | null
+          extra_info: string | null
+          id: string
+          image_url: string | null
+          location: string | null
+          name: string
+          responsible: string | null
+          starts_at: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          description?: string | null
+          discord_url?: string | null
+          extra_info?: string | null
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          name: string
+          responsible?: string | null
+          starts_at: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          description?: string | null
+          discord_url?: string | null
+          extra_info?: string | null
+          id?: string
+          image_url?: string | null
+          location?: string | null
+          name?: string
+          responsible?: string | null
+          starts_at?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      collaborators: {
+        Row: {
+          active: boolean
+          avatar_url: string | null
+          created_at: string
+          description: string | null
+          discord_url: string | null
+          display_order: number
+          id: string
+          name: string | null
+          nickname: string
+          role: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          avatar_url?: string | null
+          created_at?: string
+          description?: string | null
+          discord_url?: string | null
+          display_order?: number
+          id?: string
+          name?: string | null
+          nickname: string
+          role: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          avatar_url?: string | null
+          created_at?: string
+          description?: string | null
+          discord_url?: string | null
+          display_order?: number
+          id?: string
+          name?: string | null
+          nickname?: string
+          role?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      news: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          id: string
+          image_url: string | null
+          published: boolean
+          published_at: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description: string
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          published_at?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          id?: string
+          image_url?: string | null
+          published?: boolean
+          published_at?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          credits: number
+          id: string
+          nickname: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          credits?: number
+          id: string
+          nickname: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          credits?: number
+          id?: string
+          nickname?: string
+        }
+        Relationships: []
+      }
+      rankings: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          id: string
+          is_demo: boolean
+          nickname: string
+          period: string
+          purchases: number
+          total_spent: number
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          nickname: string
+          period?: string
+          purchases?: number
+          total_spent?: number
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          id?: string
+          is_demo?: boolean
+          nickname?: string
+          period?: string
+          purchases?: number
+          total_spent?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      roulette_prizes: {
+        Row: {
+          active: boolean
+          color: string
+          created_at: string
+          display_order: number
+          id: string
+          image_url: string | null
+          name: string
+          probability: number
+          rarity: string
+          updated_at: string
+        }
+        Insert: {
+          active?: boolean
+          color?: string
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          name: string
+          probability?: number
+          rarity?: string
+          updated_at?: string
+        }
+        Update: {
+          active?: boolean
+          color?: string
+          created_at?: string
+          display_order?: number
+          id?: string
+          image_url?: string | null
+          name?: string
+          probability?: number
+          rarity?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      roulette_results: {
+        Row: {
+          created_at: string
+          id: string
+          nickname: string
+          prize_id: string | null
+          prize_name: string
+          rarity: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          nickname: string
+          prize_id?: string | null
+          prize_name: string
+          rarity?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          nickname?: string
+          prize_id?: string | null
+          prize_name?: string
+          rarity?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "roulette_results_prize_id_fkey"
+            columns: ["prize_id"]
+            isOneToOne: false
+            referencedRelation: "roulette_prizes"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      site_settings: {
+        Row: {
+          discord_server_url: string
+          footer_tagline: string
+          hero_description: string
+          hero_title: string
+          how_it_works: Json
+          id: number
+          spin_cost: number
+          store_name: string
+          updated_at: string
+        }
+        Insert: {
+          discord_server_url?: string
+          footer_tagline?: string
+          hero_description?: string
+          hero_title?: string
+          how_it_works?: Json
+          id?: number
+          spin_cost?: number
+          store_name?: string
+          updated_at?: string
+        }
+        Update: {
+          discord_server_url?: string
+          footer_tagline?: string
+          hero_description?: string
+          hero_title?: string
+          how_it_works?: Json
+          id?: number
+          spin_cost?: number
+          store_name?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          id: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Insert: {
+          id?: string
+          role: Database["public"]["Enums"]["app_role"]
+          user_id: string
+        }
+        Update: {
+          id?: string
+          role?: Database["public"]["Enums"]["app_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      has_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
+      spin_roulette: { Args: never; Returns: Json }
     }
     Enums: {
-      [_ in never]: never
+      app_role: "admin" | "user"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -150,6 +514,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      app_role: ["admin", "user"],
+    },
   },
 } as const
