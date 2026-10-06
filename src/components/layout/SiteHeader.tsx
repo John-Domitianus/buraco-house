@@ -75,7 +75,12 @@ export function SiteHeader() {
           <div className="mt-3 grid gap-2 border-t border-border pt-4">
             <DiscordButton url={settings?.discord_server_url} className="w-full">Discord</DiscordButton>
             {session ? (
-              <>><Shield /> Painel admin</Link></Button>
+              <>
+                <div className="flex items-center gap-1 rounded-lg border border-border px-3 py-2 text-sm text-muted-foreground">
+                  <Coins className="h-4 w-4 text-gold" /> {profile?.credits ?? 0} créditos
+                </div>
+                {isAdmin && (
+                  <Button asChild variant="outline" className="w-full"><Link to="/" onClick={() => setOpen(false)}><Shield /> Painel admin</Link></Button>
                 )}
                 <Button variant="ghost" className="w-full" onClick={handleSignOut}><LogOut /> Sair ({profile?.nickname})</Button>
               </>
