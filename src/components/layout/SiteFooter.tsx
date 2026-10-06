@@ -7,7 +7,7 @@ import { isRealUrl, settingsQuery } from "@/lib/services";
 
 export function SiteFooter() {
   const { data: s } = useQuery(settingsQuery);
-  const name = s?.store_name ?? "Mafia Store";
+  const name = s?.store_name ?? "Buraco House";
   return (
     <footer className="mt-24 border-t border-border bg-surface">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 md:grid-cols-3">

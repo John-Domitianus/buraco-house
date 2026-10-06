@@ -32,7 +32,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link to="/" className="min-w-0" onClick={() => setOpen(false)}>
-          <BrandMark name={settings?.store_name ?? "Mafia Store"} />
+          <BrandMark name={settings?.store_name ?? "Buraco House"} />
         </Link>
 
         <nav className="hidden items-center gap-1 lg:flex">
