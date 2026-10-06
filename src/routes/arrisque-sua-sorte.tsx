@@ -15,9 +15,9 @@ import type { RoulettePrize } from "@/lib/types";
 export const Route = createFileRoute("/arrisque-sua-sorte")({
   head: () => ({
     meta: [
-      { title: "Arrisque sua Sorte — Mafia Store" },
+      { title: "Arrisque sua Sorte — Buraco House" },
       { name: "description", content: "Gire a roleta com créditos virtuais e concorra a prêmios exclusivos." },
-      { property: "og:title", content: "Arrisque sua Sorte — Mafia Store" },
+      { property: "og:title", content: "Arrisque sua Sorte — Buraco House" },
       { property: "og:description", content: "Você confia na sua sorte? Gire a roleta." },
     ],
   }),

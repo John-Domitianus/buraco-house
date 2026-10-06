@@ -11,9 +11,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/leiloes/")({
   head: () => ({
     meta: [
-      { title: "Leilões — Mafia Store" },
+      { title: "Leilões — Buraco House" },
       { name: "description", content: "Próximos leilões de Pokémon, contagem regressiva e leilões anteriores." },
-      { property: "og:title", content: "Leilões — Mafia Store" },
+      { property: "og:title", content: "Leilões — Buraco House" },
       { property: "og:description", content: "Acompanhe o próximo leilão de Pokémon da comunidade." },
     ],
   }),
