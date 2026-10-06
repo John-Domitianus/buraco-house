@@ -78,7 +78,7 @@ export function DiscordButton({
   url,
   children = "Entrar no Discord",
   ...props
-}: { url?: string | null; children?: ReactNode } & Omit<ButtonProps, "onClick">) {
+}: { url?: string | null | undefined; children?: ReactNode } & Omit<ButtonProps, "onClick">) {
   return (
     <Button
       variant="discord"
