@@ -36,7 +36,13 @@ function Page() {
     setLoading(true);
     const { error } = await supabase.auth.signInWithPassword(parsed.data);
     setLoading(false);
-    if (error) { toast.error(error.message === "Invalid login credentials" ? "E-mail ou senha incorretos" : error.message); return; }
+    if (error) {
+      const msg = error.message === "Invalid login credentials" ? "E-mail ou senha incorretos"
+        : error.message === "Email not confirmed" ? "Confirme seu e-mail antes de entrar. Verifique sua caixa de entrada."
+        : error.message;
+      toast.error(msg);
+      return;
+    }
     toast.success("Bem-vindo de volta!");
     navigate({ to: "/" });
   }
