@@ -9,9 +9,9 @@ import { auctionQuery, auctionStatus, fmtDate, fmtMoney, fmtTime, settingsQuery 
 export const Route = createFileRoute("/leiloes/$id")({
   head: () => ({
     meta: [
-      { title: "Detalhes do leilão — Mafia Store" },
+      { title: "Detalhes do leilão — Buraco House" },
       { name: "description", content: "Veja os Pokémon, horário e responsável por este leilão." },
-      { property: "og:title", content: "Detalhes do leilão — Mafia Store" },
+      { property: "og:title", content: "Detalhes do leilão — Buraco House" },
       { property: "og:description", content: "Pokémon disponíveis, data e informações do leilão." },
     ],
   }),

@@ -12,9 +12,9 @@ import { supabase } from "@/integrations/supabase/client";
 export const Route = createFileRoute("/registro")({
   head: () => ({
     meta: [
-      { title: "Criar conta — Mafia Store" },
-      { name: "description", content: "Crie sua conta na Mafia Store." },
-      { property: "og:title", content: "Criar conta — Mafia Store" },
+      { title: "Criar conta — Buraco House" },
+      { name: "description", content: "Crie sua conta na Buraco House." },
+      { property: "og:title", content: "Criar conta — Buraco House" },
       { property: "og:description", content: "Junte-se à comunidade." },
     ],
   }),

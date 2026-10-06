@@ -150,7 +150,7 @@ Criar uma barra de navegação fixa ou sticky no topo.
 
 Nome provisório:
 
-"Mafia Store"
+"Buraco House"
 
 IMPORTANTE:
 
@@ -206,7 +206,7 @@ HERO SECTION
 
 Mostrar:
 
-"Mafia Store"
+"Buraco House"
 
 Título secundário relacionado a vendas e economia de Cobblemon.
 
@@ -956,7 +956,7 @@ Discord
 
 Adicionar:
 
-"© 2026 Mafia Store. Todos os direitos reservados."
+"© 2026 Buraco House. Todos os direitos reservados."
 
 Deixar o ano automático.
 

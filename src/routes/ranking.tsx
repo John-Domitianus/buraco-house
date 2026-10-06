@@ -10,9 +10,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/ranking")({
   head: () => ({
     meta: [
-      { title: "Ranking de compradores — Mafia Store" },
+      { title: "Ranking de compradores — Buraco House" },
       { name: "description", content: "Os jogadores que mais apoiaram a loja neste mês, trimestre e no total." },
-      { property: "og:title", content: "Ranking — Mafia Store" },
+      { property: "og:title", content: "Ranking — Buraco House" },
       { property: "og:description", content: "Veja o ranking dos maiores compradores." },
     ],
   }),

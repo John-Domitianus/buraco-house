@@ -82,7 +82,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mafia Store — Loja e comunidade Cobblemon" },
+      { title: "Buraco House — Loja e comunidade Cobblemon" },
       { name: "description", content: "Leilões, ranking, colaboradores e roleta da comunidade Cobblemon." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -10,9 +10,9 @@ import heroImg from "@/assets/hero.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Mafia Store — Pokémon, leilões e oportunidades Cobblemon" },
+      { title: "Buraco House — Pokémon, leilões e oportunidades Cobblemon" },
       { name: "description", content: "Leilões de Pokémon, ranking de compradores, colaboradores e roleta da comunidade Cobblemon." },
-      { property: "og:title", content: "Mafia Store — Loja e comunidade Cobblemon" },
+      { property: "og:title", content: "Buraco House — Loja e comunidade Cobblemon" },
       { property: "og:description", content: "Leilões, ranking, novidades e muito mais para sua jornada no Cobblemon." },
     ],
   }),
@@ -38,7 +38,7 @@ function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-primary-glow" /> Comunidade Cobblemon
             </span>
             <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] sm:text-6xl">
-              {s?.store_name ?? "Mafia Store"}
+              {s?.store_name ?? "Buraco House"}
             </h1>
             <p className="mt-4 font-display text-xl font-semibold text-gradient sm:text-2xl">
               {s?.hero_title ?? "Pokémon, leilões e oportunidades para sua jornada."}

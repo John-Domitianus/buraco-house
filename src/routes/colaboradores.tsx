@@ -6,9 +6,9 @@ import { collaboratorsQuery } from "@/lib/services";
 export const Route = createFileRoute("/colaboradores")({
   head: () => ({
     meta: [
-      { title: "Colaboradores — Mafia Store" },
+      { title: "Colaboradores — Buraco House" },
       { name: "description", content: "Conheça a equipe responsável pela loja, vendas e organização." },
-      { property: "og:title", content: "Colaboradores — Mafia Store" },
+      { property: "og:title", content: "Colaboradores — Buraco House" },
       { property: "og:description", content: "A equipe por trás da loja Cobblemon." },
     ],
   }),
